@@ -1,9 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, Easing } from 'react-native';
+import { linePositionRefsProps } from '.';
 
-export default function useAnimationVertically() {
+export default function useAnimationVertically(linePositionRefs: linePositionRefsProps) {
   const [currentAnimation, setCurrentAnimation] = useState(false);
   const [isFirstAnimation, setIsFirstAnimation] = useState(false);
+  const middlePosition = linePositionRefs["bottomLinePosition"]! - linePositionRefs["middleLinePosition"]!
 
   let topLineRef = new Animated.Value(0)
   let middleLineRef = new Animated.Value(1)
@@ -86,7 +88,7 @@ export default function useAnimationVertically() {
         Animated.timing(
           topLineRef,
           {
-            toValue: 69,
+            toValue: middlePosition,
             duration: 400,
             easing: Easing.cubic,
             useNativeDriver: false
@@ -95,7 +97,7 @@ export default function useAnimationVertically() {
         Animated.timing(
           bottomLineRef,
           {
-            toValue: - 69,
+            toValue: - middlePosition,
             duration: 400,
             easing: Easing.cubic,
             useNativeDriver: false
@@ -105,8 +107,8 @@ export default function useAnimationVertically() {
   }
 
   function resetAnimation() {
-    topLineRef.setValue(69)
-    bottomLineRef.setValue(-69)
+    topLineRef.setValue(middlePosition)
+    bottomLineRef.setValue(-middlePosition)
     topLineRotateRef.setValue(1)
     bottomLineRotateRef.setValue(1)
     Animated.sequence([

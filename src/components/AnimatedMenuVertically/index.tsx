@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import GradientText from '../GradientText';
 import {
@@ -16,21 +16,52 @@ export interface MenuContentProps {
   activeOpacity?: number;
 }
 
+export interface linePositionRefsProps{
+  topLinePosition?: number;
+  middleLinePosition?: number;
+  bottomLinePosition?: number;
+}
+
 function AnimatedMenuVertically(menuProps: MenuContentProps) {
+  const [ linePositionRefs, setLinePositionRefs ] = useState<linePositionRefsProps>({} as linePositionRefsProps)
 
   const {
-    toogleAnimations, 
-    topLineAnimatedStyle, 
+    toogleAnimations,
+    topLineAnimatedStyle,
     middleLineAnimatedStyle,
     bottomLineAnimatedStyle,
-  } = useAnimationVertically();
-  
+  } = useAnimationVertically(linePositionRefs);
+
+  const setLinePositionByKey = (key: keyof linePositionRefsProps, positionYValue: number) => {
+    setLinePositionRefs({ ...linePositionRefs, [key]: positionYValue})
+  }
+
+  console.log("linePositionRefs", linePositionRefs)
+
   return (
     <MenuContent {...menuProps} onPress={toogleAnimations}>
       <LinesBox>
-        <Line style={topLineAnimatedStyle}/>
-        <Line style={middleLineAnimatedStyle}/>
-        <Line style={bottomLineAnimatedStyle} />
+        <Line
+          onLayout={(event: any) => {
+            const positionY = event.nativeEvent.layout.y;
+            setLinePositionByKey("topLinePosition", positionY);
+          }} 
+          style={topLineAnimatedStyle}
+        />
+        <Line
+          onLayout={(event: any) => {
+            const positionY = event.nativeEvent.layout.y;
+            setLinePositionByKey("middleLinePosition", positionY);
+          }}
+          style={middleLineAnimatedStyle}
+        />
+        <Line
+          onLayout={(event: any) => {
+            const positionY = event.nativeEvent.layout.y;
+            setLinePositionByKey("bottomLinePosition", positionY);
+          }} 
+          style={bottomLineAnimatedStyle} 
+        />
       </LinesBox>
     </MenuContent>
   );

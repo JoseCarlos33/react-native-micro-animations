@@ -21,12 +21,12 @@ export const LinesBox = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  padding: 63px 10px;
+  padding: 20% 10px;
 `;
 
 export const Line = styled(Animated.View)`
   width: 80%;
-  height: ${hp(2.5)}px;
+  height: 17%;
   background-color: #343947;
-  border-radius: 9px;
+  border-radius: 20px;
 `;

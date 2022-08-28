@@ -9,6 +9,6 @@ export const Container = styled.View`
 export const AnimatedComponentBox = styled.View`
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 

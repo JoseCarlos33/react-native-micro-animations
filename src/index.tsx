@@ -19,8 +19,22 @@ const MicroAnimations: React.FC = () => {
       />
       <AnimatedComponentBox>
         <AnimatedMenuVertically
-          height={72}
-          width={75}
+          height={20}
+          width={20}
+          borderRadius={15}
+          activeOpacity={0.6}
+          backgroundColor={"#f5f5f5"}
+        />
+        <AnimatedMenuVertically
+          height={30}
+          width={30}
+          borderRadius={20}
+          activeOpacity={0.6}
+          backgroundColor={"#f5f5f5"}
+        />
+        <AnimatedMenuVertically
+          height={50}
+          width={50}
           borderRadius={40}
           activeOpacity={0.6}
           backgroundColor={"#f5f5f5"}
