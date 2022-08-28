@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import AnimatedMenuVertically from './components/AnimatedMenuVertically';
-import { Container } from './components/AnimatedMenuVertically/styles';
+import { Container, AnimatedComponentBox } from './global/styles';
 import GradientText from './components/GradientText';
 
 // import { Container } from './styles';
@@ -9,15 +9,23 @@ import GradientText from './components/GradientText';
 const MicroAnimations: React.FC = () => {
   return (
     <Container>
-      <GradientText 
+      <GradientText
         title={"Micro Animações"}
         colorsData={[
-          {color: "#a7006f", percent: "0%"},
-          {color: "#620ed0", percent: "50%"},
-          {color: "#2b1ac8", percent: "70%"}, 
+          { color: "#a7006f", percent: "0%" },
+          { color: "#620ed0", percent: "50%" },
+          { color: "#2b1ac8", percent: "70%" },
         ]}
       />
-      <AnimatedMenuVertically/>
+      <AnimatedComponentBox>
+        <AnimatedMenuVertically
+          height={72}
+          width={75}
+          borderRadius={40}
+          activeOpacity={0.6}
+          backgroundColor={"#f5f5f5"}
+        />
+      </AnimatedComponentBox>
     </Container>
   );
 }

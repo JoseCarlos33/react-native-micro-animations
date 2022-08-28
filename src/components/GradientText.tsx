@@ -29,7 +29,7 @@ function GradientText({title, colorsData}:GradientTextProps){
       </Defs>
       <Text fill="url(#rainbow)">
         <TSpan
-          fontSize="35"
+          fontSize="39"
           fontFamily="Rubik-Regular"
           x="0"
           y="72"

@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Animated } from 'react-native';
 import GradientText from '../GradientText';
-import { 
-  Container
- } from './styles';
+import {
+  MenuContent,
+  LinesBox,
+  Line
+} from './styles';
+import useAnimationVertically from './useAnimation';
 
-const AnimatedMenuVertically: React.FC = () => {
+export interface MenuContentProps {
+  width?: number;
+  height?: number;
+  borderRadius?: number;
+  backgroundColor?: string;
+  activeOpacity?: number;
+}
+
+function AnimatedMenuVertically(menuProps: MenuContentProps) {
+
+  const {
+    toogleAnimations, 
+    topLineAnimatedStyle, 
+    middleLineAnimatedStyle,
+    bottomLineAnimatedStyle,
+  } = useAnimationVertically();
+  
   return (
-    <Container>
-      
-    </Container>
+    <MenuContent {...menuProps} onPress={toogleAnimations}>
+      <LinesBox>
+        <Line style={topLineAnimatedStyle}/>
+        <Line style={middleLineAnimatedStyle}/>
+        <Line style={bottomLineAnimatedStyle} />
+      </LinesBox>
+    </MenuContent>
   );
 }
 
