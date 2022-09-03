@@ -56,21 +56,21 @@ const MicroAnimations: React.FC = () => {
                     <AnimatedMenuHorizontally
                       height={20}
                       width={20}
-                      borderRadius={15}
+                      borderRadius={20}
                       activeOpacity={0.6}
                       backgroundColor={"#f5f5f5"}
                     />
                     <AnimatedMenuHorizontally
                       height={30}
                       width={30}
-                      borderRadius={20}
+                      borderRadius={25}
                       activeOpacity={0.6}
                       backgroundColor={"#f5f5f5"}
                     />
                     <AnimatedMenuHorizontally
                       height={50}
                       width={50}
-                      borderRadius={40}
+                      borderRadius={45}
                       activeOpacity={0.6}
                       backgroundColor={"#f5f5f5"}
                     />
