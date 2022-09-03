@@ -20,7 +20,7 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
     easing: Easing.ease
   })
 
-  const spinBottom = topLineRotateRef.interpolate({
+  const spinBottom = bottomLineRotateRef.interpolate({
     inputRange: [0, 1],
     outputRange: ['0deg', '-45deg'],
     easing: Easing.ease
@@ -58,7 +58,7 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
         topLineRotateRef,
         {
           toValue: 1,
-          duration: 600,
+          duration: 500,
           easing: Easing.back(1),
           useNativeDriver: false
         }
@@ -67,7 +67,7 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
         bottomLineRotateRef,
         {
           toValue: 1,
-          duration: 600,
+          duration: 500,
           easing: Easing.back(1),
           useNativeDriver: false
         }
@@ -89,8 +89,8 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
           topLineRef,
           {
             toValue: middlePosition,
-            duration: 400,
-            easing: Easing.cubic,
+            duration: 300,
+            easing: Easing.elastic(1),
             useNativeDriver: false
           }
         ),
@@ -98,8 +98,8 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
           bottomLineRef,
           {
             toValue: - middlePosition,
-            duration: 400,
-            easing: Easing.cubic,
+            duration: 300,
+            easing: Easing.elastic(1),
             useNativeDriver: false
           }
         ),
@@ -147,8 +147,8 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
           topLineRef,
           {
             toValue: 0,
-            duration: 500,
-            easing: Easing.back(1),
+            duration: 300,
+            easing: Easing.elastic(1),
             useNativeDriver: false
           }
         ),
@@ -156,8 +156,8 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
           bottomLineRef,
           {
             toValue: 0,
-            duration: 500,
-            easing: Easing.back(1),
+            duration: 300,
+            easing: Easing.elastic(1),
             useNativeDriver: false
           }
         ),
