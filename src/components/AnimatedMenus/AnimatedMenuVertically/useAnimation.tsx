@@ -7,12 +7,12 @@ export default function useAnimationVertically(linePositionRefs: linePositionRef
   const [isFirstAnimation, setIsFirstAnimation] = useState(false);
   const middlePosition = linePositionRefs["bottomLinePosition"]! - linePositionRefs["middleLinePosition"]!
 
-  let topLineRef = new Animated.Value(0)
-  let middleLineRef = new Animated.Value(1)
-  let bottomLineRef = new Animated.Value(0)
+  let topLineRef = useRef(new Animated.Value(0)).current
+  let middleLineRef = useRef(new Animated.Value(1)).current
+  let bottomLineRef = useRef(new Animated.Value(0)).current
 
-  let topLineRotateRef = new Animated.Value(0)
-  let bottomLineRotateRef = new Animated.Value(0)
+  let topLineRotateRef = useRef(new Animated.Value(0)).current
+  let bottomLineRotateRef = useRef(new Animated.Value(0)).current
 
   const spinTop = topLineRotateRef.interpolate({
     inputRange: [0, 1],

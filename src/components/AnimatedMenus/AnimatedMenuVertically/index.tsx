@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated } from 'react-native';
-import GradientText from '../GradientText';
+import GradientText from 'src/components/GradientText';
 import {
   MenuContent,
   LinesBox,
@@ -36,7 +36,6 @@ function AnimatedMenuVertically(menuProps: MenuContentProps) {
     setLinePositionRefs({ ...linePositionRefs, [key]: positionYValue})
   }
 
-  console.log("linePositionRefs", linePositionRefs)
 
   return (
     <MenuContent {...menuProps} onPress={toogleAnimations}>
