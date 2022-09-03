@@ -34,7 +34,7 @@ export default function useAnimationHorizontally(lineBoxWidth: number) {
 
   const spaceBottomAndTop = spaceBottomAndTopRef.interpolate({
     inputRange: [0, 1],
-    outputRange: ["26%", "75%"],
+    outputRange: ["32%", "75%"],
     easing: Easing.ease
   })
 
