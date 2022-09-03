@@ -21,7 +21,7 @@
 ### Usage
 
 #### Animated Menu Vertically
-```ts
+```js
   const yourOnPressFunction = () => {
     console.log("Do something here...");
   }
