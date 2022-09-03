@@ -27,6 +27,6 @@ export const LinesBox = styled.View`
 export const Line = styled(Animated.View)`
   width: 100%;
   height: 17%;
-  background-color: #343947;
+  background-color: ${(props: MenuContentProps) => props?.lineColor ? props?.lineColor : "#343947"};
   border-radius: 20px;
 `;

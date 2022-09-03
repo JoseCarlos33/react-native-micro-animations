@@ -14,16 +14,18 @@ export interface MenuContentProps {
   borderRadius?: number;
   backgroundColor?: string;
   activeOpacity?: number;
+  lineColor?: string;
+  onPress?: any;
 }
 
-export interface linePositionRefsProps{
+export interface linePositionRefsProps {
   topLinePosition?: number;
   middleLinePosition?: number;
   bottomLinePosition?: number;
 }
 
 function AnimatedMenuVertically(menuProps: MenuContentProps) {
-  const [ linePositionRefs, setLinePositionRefs ] = useState<linePositionRefsProps>({} as linePositionRefsProps)
+  const [linePositionRefs, setLinePositionRefs] = useState<linePositionRefsProps>({} as linePositionRefsProps)
 
   const {
     toogleAnimations,
@@ -33,19 +35,26 @@ function AnimatedMenuVertically(menuProps: MenuContentProps) {
   } = useAnimationVertically(linePositionRefs);
 
   const setLinePositionByKey = (key: keyof linePositionRefsProps, positionYValue: number) => {
-    setLinePositionRefs({ ...linePositionRefs, [key]: positionYValue})
+    setLinePositionRefs({ ...linePositionRefs, [key]: positionYValue })
   }
 
 
   return (
-    <MenuContent {...menuProps} onPress={toogleAnimations}>
+    <MenuContent
+      {...menuProps}
+      onPress={() => {
+        toogleAnimations()
+        menuProps.onPress && menuProps.onPress()
+      }}
+    >
       <LinesBox>
         <Line
           onLayout={(event: any) => {
             const positionY = event.nativeEvent.layout.y;
             setLinePositionByKey("topLinePosition", positionY);
-          }} 
+          }}
           style={topLineAnimatedStyle}
+          {...menuProps}
         />
         <Line
           onLayout={(event: any) => {
@@ -53,13 +62,15 @@ function AnimatedMenuVertically(menuProps: MenuContentProps) {
             setLinePositionByKey("middleLinePosition", positionY);
           }}
           style={middleLineAnimatedStyle}
+          {...menuProps}
         />
         <Line
           onLayout={(event: any) => {
             const positionY = event.nativeEvent.layout.y;
             setLinePositionByKey("bottomLinePosition", positionY);
-          }} 
-          style={bottomLineAnimatedStyle} 
+          }}
+          style={bottomLineAnimatedStyle}
+          {...menuProps}
         />
       </LinesBox>
     </MenuContent>

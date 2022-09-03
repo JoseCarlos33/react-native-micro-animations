@@ -7,20 +7,7 @@ import {
   Line
 } from './styles';
 import useAnimationHorizontally from './useAnimation';
-
-export interface MenuContentProps {
-  width?: number;
-  height?: number;
-  borderRadius?: number;
-  backgroundColor?: string;
-  activeOpacity?: number;
-}
-
-export interface linePositionRefsProps {
-  topLinePosition?: number;
-  middleLinePosition?: number;
-  bottomLinePosition?: number;
-}
+import { MenuContentProps } from 'src/components/AnimatedMenus/AnimatedMenuVertically';
 
 function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
   const [linesBoxWidth, setLinesBoxWidth] = useState(0)
@@ -33,7 +20,13 @@ function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
   } = useAnimationHorizontally(linesBoxWidth);
 
   return (
-    <MenuContent {...menuProps} onPress={toogleAnimations}>
+    <MenuContent
+      {...menuProps}
+      onPress={() => {
+        toogleAnimations()
+        menuProps.onPress && menuProps.onPress()
+      }}
+    >
       <LinesBox
         onLayout={(event: any) => {
           const width = event.nativeEvent.layout.width;
@@ -42,9 +35,9 @@ function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
         }}
       >
         <View></View>
-        <Line style={topLineAnimatedStyle} />
-        <Line style={middleLineAnimatedStyle} />
-        <Line style={bottomLineAnimatedStyle} />
+        <Line style={topLineAnimatedStyle} {...menuProps} />
+        <Line style={middleLineAnimatedStyle} {...menuProps} />
+        <Line style={bottomLineAnimatedStyle} {...menuProps} />
         <View></View>
       </LinesBox>
     </MenuContent>

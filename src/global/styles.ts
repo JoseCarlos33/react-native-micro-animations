@@ -21,3 +21,13 @@ export const Box = styled.View`
   justify-content: center;
 `;
 
+export const ToggleButton = styled.TouchableOpacity`
+  padding: 0px 10px;
+  background-color: ${(props: any) => props.backgroundColor ? props.backgroundColor : "#e1dae8"};
+  border-color: ${(props: any) => props.borderColor ? props.borderColor : "#8f96a8"};
+  border-width: 1px;
+  border-radius: 20px;
+  height: 30px;
+  justify-content: center;
+  margin-left: 10px;
+`;
