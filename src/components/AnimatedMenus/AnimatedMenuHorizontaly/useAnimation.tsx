@@ -4,14 +4,12 @@ import { Animated, Easing } from 'react-native';
 export default function useAnimationHorizontally(lineBoxWidth: number) {
   const [currentAnimation, setCurrentAnimation] = useState(false);
   const [isFirstAnimation, setIsFirstAnimation] = useState(false);
-  const [ persistAnimation, setPersistAnimation ] = useState(false);
-  const lineWidth = lineBoxWidth ? lineBoxWidth * 0.7 : 0
-
+  const lineWidth = lineBoxWidth ? lineBoxWidth * 0.7 : 0;
+  
   let topLineRef = useRef(new Animated.Value(0)).current;
   topLineRef.setValue(lineWidth);
 
   let middleLineRef = useRef(new Animated.Value(lineWidth)).current;
-  middleLineRef.setValue(lineWidth);
 
   let bottomLineRef = useRef(new Animated.Value(0)).current
   bottomLineRef.setValue(lineWidth);
@@ -254,6 +252,10 @@ export default function useAnimationHorizontally(lineBoxWidth: number) {
       currentAnimation ? startAnimation() : resetAnimation()
     }
   }, [currentAnimation])
+
+  useEffect(() => 
+    middleLineRef.setValue(lineWidth)
+  , [lineWidth])
 
   return {
     topLineAnimatedStyle,

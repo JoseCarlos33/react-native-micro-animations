@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Animated, View } from 'react-native';
-import GradientText from 'src/components/GradientText';
+import React, { useState } from 'react';
+import { View } from 'react-native';
 import {
   MenuContent,
   LinesBox,
   Line
 } from './styles';
+
 import useAnimationHorizontally from './useAnimation';
 import { MenuContentProps } from 'src/components/AnimatedMenus/AnimatedMenuVertically';
 
