@@ -15,7 +15,7 @@ export interface MenuContentProps {
   backgroundColor?: string;
   activeOpacity?: number;
   lineColor?: string;
-  onPress?: any;
+  onPress?: () => void;
 }
 
 export interface linePositionRefsProps {
