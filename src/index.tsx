@@ -1,11 +1,19 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { Animated, Dimensions, View, Text } from 'react-native';
+import { Animated, Dimensions, View, Text, Image } from 'react-native';
 import AnimatedMenuVertically from './components/AnimatedMenus/AnimatedMenuVertically';
-import { Container, AnimatedComponentBox, Box, ToggleButton } from './global/styles';
+import { Container, AnimatedComponentBox, Box, ToggleButton, SectionComponentBox, AnimationCardBox } from './global/styles';
 import GradientText from './components/GradientText';
 import AnimatedMenuHorizontally from './components/AnimatedMenus/AnimatedMenuHorizontaly';
-
-// import { Container } from './styles';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import SaveElasticButton from './components/InstagramActions/SaveElasticButton';
+import LikeBounceButton from './components/InstagramActions/LikeElasticButton';
+import CommentsNormal from '~/assets/icons/comments-regular.svg';
+import CommentsSolid from '~/assets/icons/comments-solid.svg';
+import EyeNormal from '~/assets/icons/eye-regular.svg';
+import EyeSolid from '~/assets/icons/eye-slash-solid.svg';
+import FolderNormal from '~/assets/icons/folder-open-regular.svg';
+import FolderSolid from '~/assets/icons/folder-solid.svg';
+import CustomElasticButton from './components/InstagramActions/CustomElasticButton';
 
 const MicroAnimations: React.FC = () => {
   const [positionPagination, setPositionPagination] = useState(0);
@@ -23,10 +31,8 @@ const MicroAnimations: React.FC = () => {
   }
 
   function getCurrentPage(scrollXOfPage: number) {
-    const pageWidth = scrollXOfPage / width;
-    pageWidth > 0.5
-      ? setPositionPagination(1)
-      : setPositionPagination(0)
+    const pageWidth = Math.round(scrollXOfPage / width);
+    setPositionPagination(pageWidth)
   }
 
   const changePage = (pageIndex: number) => {
@@ -38,7 +44,7 @@ const MicroAnimations: React.FC = () => {
   return (
     <Container>
       <GradientText
-        title={"Micro Animações"}
+        title={"Micro Animations"}
         colorsData={[
           { color: "#a7006f", percent: "0%" },
           { color: "#620ed0", percent: "50%" },
@@ -46,26 +52,33 @@ const MicroAnimations: React.FC = () => {
         ]}
       />
       <View style={{ flexDirection: "row" }}>
-        <ToggleButton style={[positionPagination == 0 && activityColor]} onPress={() => changePage(0)}>
-          <Text style={{ fontFamily: "Rubik-Regular" }}>
-            Menu Animado 1
-          </Text>
-        </ToggleButton>
-        <ToggleButton style={[positionPagination == 1 && activityColor]} onPress={() => changePage(1)}>
-          <Text style={{ fontFamily: "Rubik-Regular" }}>
-            Menu Animado 2
-          </Text>
-        </ToggleButton>
+        <Animated.FlatList
+          ref={animationPaginatedRef}
+          data={["Animated Menu 1", "Animated Menu 2", "Instagram Actions"]}
+          keyExtractor={item => item}
+          renderItem={({ item, index }) =>
+            <ToggleButton key={item} style={[index == positionPagination && activityColor]} onPress={() => {
+              changePage(index)
+            }}>
+              <Text style={{ fontFamily: "Rubik-Regular" }}>
+                {item}
+              </Text>
+            </ToggleButton>
+          }
+          horizontal
+          showsHorizontalScrollIndicator={false}
+
+        />
       </View>
       <Animated.FlatList
         ref={animationPaginatedRef}
-        data={[1234, 2345]}
+        data={[1234, 2345, 3456]}
         keyExtractor={item => item.toString()}
         renderItem={({ item, index }) => {
           return (
-            <Box key={item} style={{ width: width - 13, height: "100%" }}>
+            <Box key={item} style={{ width: wp(97), height: "100%" }}>
               {
-                index == 0 ? (
+                index === 0 && (
                   <AnimatedComponentBox>
                     <AnimatedMenuVertically
                       height={20}
@@ -91,7 +104,10 @@ const MicroAnimations: React.FC = () => {
                       backgroundColor={"#f5f5f5"}
                     />
                   </AnimatedComponentBox>
-                ) : (
+                )
+              }
+              {
+                index === 1 && (
                   <AnimatedComponentBox>
                     <AnimatedMenuHorizontally
                       height={20}
@@ -119,6 +135,53 @@ const MicroAnimations: React.FC = () => {
                   </AnimatedComponentBox>
                 )
               }
+              {
+                index === 2 && (
+                  <AnimatedComponentBox style={{ justifyContent: "flex-start" }} >
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Like Action Button
+                      </Text>
+                      <AnimationCardBox>
+                        <SaveElasticButton />
+                        <SaveElasticButton height={45} width={45} />
+                        <SaveElasticButton height={55} width={55} />
+                        <SaveElasticButton height={65} width={65} />
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Save Action Button
+                      </Text>
+                      <AnimationCardBox>
+                        <LikeBounceButton />
+                        <LikeBounceButton height={45} width={45} />
+                        <LikeBounceButton height={55} width={55} />
+                        <LikeBounceButton height={65} width={65} />
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Custom Action Button
+                      </Text>
+                      <AnimationCardBox>
+                        <CustomElasticButton
+                          initIcon={<CommentsNormal height={45} width={45} fill={"#000"} />}
+                          endIcon={<CommentsSolid height={45} width={45} fill={"#000"}/>}
+                        />
+                        <CustomElasticButton
+                          initIcon={<EyeNormal height={45} width={45} fill={"#000"} />}
+                          endIcon={<EyeSolid height={45} width={45} fill={"#000"}/>}
+                        />
+                        <CustomElasticButton
+                          initIcon={<FolderSolid height={45} width={45} fill={"#000"} />}
+                          endIcon={<FolderNormal height={45} width={45} fill={"#000"}/>}
+                        />
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                  </AnimatedComponentBox>
+                )
+              }
             </Box>
           )
         }}
@@ -130,7 +193,7 @@ const MicroAnimations: React.FC = () => {
           getCurrentPage(contentOffset.x);
         }}
       />
-    </Container>
+    </Container >
   );
 }
 
