@@ -7,6 +7,13 @@ import AnimatedMenuHorizontally from './components/AnimatedMenus/AnimatedMenuHor
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import SaveElasticButton from './components/InstagramActions/SaveElasticButton';
 import LikeBounceButton from './components/InstagramActions/LikeElasticButton';
+import CommentsNormal from '~/assets/icons/comments-regular.svg';
+import CommentsSolid from '~/assets/icons/comments-solid.svg';
+import EyeNormal from '~/assets/icons/eye-regular.svg';
+import EyeSolid from '~/assets/icons/eye-slash-solid.svg';
+import FolderNormal from '~/assets/icons/folder-open-regular.svg';
+import FolderSolid from '~/assets/icons/folder-solid.svg';
+import CustomElasticButton from './components/InstagramActions/CustomElasticButton';
 
 const MicroAnimations: React.FC = () => {
   const [positionPagination, setPositionPagination] = useState(0);
@@ -137,20 +144,40 @@ const MicroAnimations: React.FC = () => {
                       </Text>
                       <AnimationCardBox>
                         <SaveElasticButton />
-                        <SaveElasticButton height={50} width={50}/>
-                        <SaveElasticButton height={70} width={70}/>
+                        <SaveElasticButton height={45} width={45} />
+                        <SaveElasticButton height={55} width={55} />
+                        <SaveElasticButton height={65} width={65} />
                       </AnimationCardBox>
                     </SectionComponentBox>
                     <SectionComponentBox>
                       <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
                         Save Action Button
                       </Text>
-                      <LikeBounceButton />
+                      <AnimationCardBox>
+                        <LikeBounceButton />
+                        <LikeBounceButton height={45} width={45} />
+                        <LikeBounceButton height={55} width={55} />
+                        <LikeBounceButton height={65} width={65} />
+                      </AnimationCardBox>
                     </SectionComponentBox>
                     <SectionComponentBox>
                       <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
                         Custom Action Button
                       </Text>
+                      <AnimationCardBox>
+                        <CustomElasticButton
+                          initIcon={<CommentsNormal height={45} width={45} fill={"#000"} />}
+                          endIcon={<CommentsSolid height={45} width={45} fill={"#000"}/>}
+                        />
+                        <CustomElasticButton
+                          initIcon={<EyeNormal height={45} width={45} fill={"#000"} />}
+                          endIcon={<EyeSolid height={45} width={45} fill={"#000"}/>}
+                        />
+                        <CustomElasticButton
+                          initIcon={<FolderSolid height={45} width={45} fill={"#000"} />}
+                          endIcon={<FolderNormal height={45} width={45} fill={"#000"}/>}
+                        />
+                      </AnimationCardBox>
                     </SectionComponentBox>
                   </AnimatedComponentBox>
                 )

@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get('window').width;
@@ -48,5 +48,8 @@ export const AnimationCardBox = styled.View.attrs({
   border-radius: 10px;
   flex-direction: row;
   height: 100px;
+  width: ${wp(85)}px;
   align-items: center;
+  justify-content: space-evenly;
+  margin-top: 12px;
 `;

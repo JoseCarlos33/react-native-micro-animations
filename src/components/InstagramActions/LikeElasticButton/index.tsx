@@ -1,7 +1,7 @@
 import React from 'react';
-// import HeartNormal from './src/assets/icons/heart-regular.svg';
-// import HeartSolid from 'src/assets/icons/heart-solid.svg';
-import CustomBounceButton from '~/components/InstagramActions/CustomBounceButton';
+import HeartNormal from '~/assets/icons/heart-regular.svg';
+import HeartSolid from '~/assets/icons/heart-solid.svg';
+import CustomElasticButton from '~/components/InstagramActions/CustomElasticButton';
 
 interface LikeBounceButtonProps{
   height?: number;
@@ -10,11 +10,10 @@ interface LikeBounceButtonProps{
 
 function LikeBounceButton({height, width}: LikeBounceButtonProps){
   return (
-    <></>
-    // <CustomBounceButton
-    //   initIcon={<HeartNormal width={width ?? 32} height={height ?? 32} fill={"#000"}/>}
-    //   endIcon={<HeartSolid width={width ?? 32} height={height ?? 32} fill={"#000"}/>}
-    // />
+    <CustomElasticButton
+      initIcon={<HeartNormal width={width ?? 32} height={height ?? 32} fill={"#000"}/>}
+      endIcon={<HeartSolid width={width ?? 32} height={height ?? 32} fill={"red"}/>}
+    />
   );
 }
 

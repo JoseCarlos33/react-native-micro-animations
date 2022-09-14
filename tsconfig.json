@@ -10,7 +10,6 @@
     "baseUrl": "./",
     "paths": {
       "~": ["./src"],
-      "@components": ["./src/components/"]
     }                              /* Skip type checking all .d.ts files. */
   },
 }

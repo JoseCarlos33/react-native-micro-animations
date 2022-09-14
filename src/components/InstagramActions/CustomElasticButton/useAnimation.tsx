@@ -25,7 +25,7 @@ export default function CustomElasticButtonAnimation() {
       Animated.timing(
         initIconRef,
         {
-          toValue: 0.5,
+          toValue: 0,
           duration: 100,
           easing: Easing.elastic(1.7),
           useNativeDriver: false

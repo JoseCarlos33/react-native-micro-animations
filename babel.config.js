@@ -7,7 +7,6 @@ module.exports = {
       ],
       "alias": {
         "~": "./src",
-        "@components": "./src/components"
       }
     }],
   ],
