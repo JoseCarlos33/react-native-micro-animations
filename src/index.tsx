@@ -140,10 +140,10 @@ const MicroAnimations: React.FC = () => {
                   <AnimatedComponentBox style={{ justifyContent: "flex-start" }} >
                     <SectionComponentBox>
                       <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
-                        Like Action Button
+                        Save Action Button
                       </Text>
                       <AnimationCardBox>
-                        <SaveElasticButton />
+                        <SaveElasticButton onPress={() => console.log("teste")}/>
                         <SaveElasticButton height={45} width={45} />
                         <SaveElasticButton height={55} width={55} />
                         <SaveElasticButton height={65} width={65} />
@@ -151,7 +151,7 @@ const MicroAnimations: React.FC = () => {
                     </SectionComponentBox>
                     <SectionComponentBox>
                       <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
-                        Save Action Button
+                        Like Action Button
                       </Text>
                       <AnimationCardBox>
                         <LikeBounceButton />
@@ -176,6 +176,7 @@ const MicroAnimations: React.FC = () => {
                         <CustomElasticButton
                           initIcon={<FolderSolid height={45} width={45} fill={"#000"} />}
                           endIcon={<FolderNormal height={45} width={45} fill={"#000"}/>}
+                          onPress={onPressEvent}
                         />
                       </AnimationCardBox>
                     </SectionComponentBox>
