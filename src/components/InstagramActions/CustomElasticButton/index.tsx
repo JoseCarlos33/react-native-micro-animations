@@ -1,20 +1,22 @@
 import React from 'react';
 import { MenuContentProps } from 'src/components/AnimatedMenus/AnimatedMenuVertically';
-import { 
+import {
   ContainerPressable,
-  IconBox
+  IconBox,
 } from './styles';
 
 import CustomElasticButtonAnimation from './useAnimation';
 
-interface CustomElasticButtonProps extends MenuContentProps{
+export interface CustomElasticButtonProps {
   initIcon: JSX.Element;
   endIcon: JSX.Element;
   height?: number;
   width?: number;
+  activeOpacity?: number;
+  onPress?: any;
 }
 
-function CustomElasticButton(menuProps: CustomElasticButtonProps){
+function CustomElasticButton(menuProps: CustomElasticButtonProps) {
 
   const {
     initIconAnimatedStyle,
@@ -23,10 +25,13 @@ function CustomElasticButton(menuProps: CustomElasticButtonProps){
   } = CustomElasticButtonAnimation();
 
   return (
-    <ContainerPressable onPress={() => { 
-      toogleAnimations();
-      // menuProps.onPress && menuProps.onPress();
-    }} {...menuProps}>
+    <ContainerPressable
+      {...menuProps}
+      onPress={() => {
+        toogleAnimations();
+        menuProps.onPress && menuProps.onPress()
+      }}
+    >
       <IconBox style={initIconAnimatedStyle}>
         {menuProps.initIcon}
       </IconBox>
