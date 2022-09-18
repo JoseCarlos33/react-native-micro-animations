@@ -3,7 +3,7 @@ import HeartNormal from '~/assets/icons/heart-regular.svg';
 import HeartSolid from '~/assets/icons/heart-solid.svg';
 import CustomElasticButton from '~/components/InstagramActions/CustomElasticButton';
 
-interface LikeBounceButtonProps{
+interface LikeElasticButtonProps{
   initialColor?: string;
   endColor?: string;
   height?: number;
@@ -11,7 +11,7 @@ interface LikeBounceButtonProps{
   onPress?: () => void;
 }
 
-function LikeBounceButton({height, width, initialColor, endColor, onPress}: LikeBounceButtonProps){
+function LikeElasticButton({height, width, initialColor, endColor, onPress}: LikeElasticButtonProps){
   return (
     <CustomElasticButton
       initIcon={<HeartNormal width={width ?? 32} height={height ?? 32} fill={initialColor ?? "#000"}/>}
@@ -21,4 +21,4 @@ function LikeBounceButton({height, width, initialColor, endColor, onPress}: Like
   );
 }
 
-export default LikeBounceButton;
+export default LikeElasticButton;

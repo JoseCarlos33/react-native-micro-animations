@@ -6,7 +6,7 @@ import GradientText from './components/GradientText';
 import AnimatedMenuHorizontally from './components/AnimatedMenus/AnimatedMenuHorizontaly';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import SaveElasticButton from './components/InstagramActions/SaveElasticButton';
-import LikeBounceButton from './components/InstagramActions/LikeElasticButton';
+import LikeElasticButton from './components/InstagramActions/LikeElasticButton';
 import CommentsNormal from '~/assets/icons/comments-regular.svg';
 import CommentsSolid from '~/assets/icons/comments-solid.svg';
 import EyeNormal from '~/assets/icons/eye-regular.svg';
@@ -154,10 +154,10 @@ const MicroAnimations: React.FC = () => {
                         Like Action Button
                       </Text>
                       <AnimationCardBox>
-                        <LikeBounceButton />
-                        <LikeBounceButton height={45} width={45} />
-                        <LikeBounceButton height={55} width={55} />
-                        <LikeBounceButton height={65} width={65} />
+                        <LikeElasticButton />
+                        <LikeElasticButton height={45} width={45} />
+                        <LikeElasticButton height={55} width={55} />
+                        <LikeElasticButton height={65} width={65} />
                       </AnimationCardBox>
                     </SectionComponentBox>
                     <SectionComponentBox>

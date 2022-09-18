@@ -5,6 +5,8 @@
 <p align="center">
   <img src=".github/demonstrationMenu.gif" 
   height="425">
+  <img src=".github/demonstrationElasticButtonIcons.gif" 
+  height="425">
 </p>
 
 
@@ -69,6 +71,53 @@
 | **`lineColor`**      | Color of the Line component into the button  | _String_       |
 | **`onPress`**        | Action when press the button                 | _() => Void_   |
 
+<br></br>
+
+## `Elastic Button ` Components
+
+### Usage
+
+#### Animated Save Button
+```js
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+
+  <SaveElasticButton 
+    height={45} 
+    width={45}
+    onPress={yourOnPressFunction}
+  />
+```
+
+#### Animated Like Button
+```js
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+
+  <SaveElasticButton 
+    height={45} 
+    width={45}
+    onPress={yourOnPressFunction}
+  />
+```
+
+#### Animated Custom Button
+```js
+  import EyeNormal from '~/assets/icons/eye-regular.svg';
+  import EyeSolid from '~/assets/icons/eye-slash-solid.svg';
+
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+
+ <CustomElasticButton
+    initIcon={<EyeNormal height={45} width={45} fill={"#000"} />}
+    endIcon={<EyeSolid height={45} width={45} fill={"#000"}/>}                    
+    onPress={yourOnPressFunction}
+  />
+```
 
 ### Stack
 
