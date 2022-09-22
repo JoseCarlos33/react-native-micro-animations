@@ -14,12 +14,11 @@
 
 1. Install dependences: 
 ```js
-  yarn
+  npm i react-native-micro-animations
 ```
-
-2. For ios platform, run before start: 
+### or
 ```js
-  cd ios && pod install
+  yarn react-native-micro-animations
 ```
 
 ## `Menu` Component
