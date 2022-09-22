@@ -2,6 +2,29 @@
   "name": "react_native_micro_animations",
   "version": "0.0.1",
   "private": true,
+  "description": "Micro Animation Components for React Native",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseCarlos33/react-native-micro-animations.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "animations",
+    "micro-animations",
+    "animated-component",
+    "react-native",
+    "react-native-component"
+  ],
+  "author": "JoseCarlos33",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoseCarlos33/react-native-micro-animations/issues"
+  },
+  "homepage": "https://github.com/JoseCarlos33/react-native-micro-animations",
+  
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
