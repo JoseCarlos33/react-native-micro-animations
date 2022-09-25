@@ -18,7 +18,7 @@
 ```
 ### or
 ```js
-  yarn react-native-micro-animations
+  yarn add react-native-micro-animations
 ```
 
 ## `Menu` Component
