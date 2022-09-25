@@ -63,5 +63,5 @@ buck-out/
 /vendor/bundle/
 
 #Android and Ios Folders
-/ios/
-/android/
+ios/
+android/
