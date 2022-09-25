@@ -9,7 +9,7 @@ import {
 import useAnimationHorizontally from './useAnimation';
 import { MenuContentProps } from 'src/components/AnimatedMenus/AnimatedMenuVertically';
 
-function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
+export function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
   const [linesBoxWidth, setLinesBoxWidth] = useState(0)
 
   const {

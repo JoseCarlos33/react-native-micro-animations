@@ -1,7 +1,7 @@
 import React from 'react';
-import HeartNormal from '~/assets/icons/heart-regular.svg';
-import HeartSolid from '~/assets/icons/heart-solid.svg';
-import CustomElasticButton from '~/components/InstagramActions/CustomElasticButton';
+import HeartNormal from '../../assets/icons/heart-regular.svg';
+import HeartSolid from '../../assets/icons/heart-solid.svg';
+import CustomElasticButton from '../CustomElasticButton';
 
 interface LikeElasticButtonProps{
   initialColor?: string;
@@ -11,7 +11,7 @@ interface LikeElasticButtonProps{
   onPress?: () => void;
 }
 
-function LikeElasticButton({height, width, initialColor, endColor, onPress}: LikeElasticButtonProps){
+export function LikeElasticButton({height, width, initialColor, endColor, onPress}: LikeElasticButtonProps){
   return (
     <CustomElasticButton
       initIcon={<HeartNormal width={width ?? 32} height={height ?? 32} fill={initialColor ?? "#000"}/>}

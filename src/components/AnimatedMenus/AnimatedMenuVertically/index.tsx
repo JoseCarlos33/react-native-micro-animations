@@ -24,7 +24,7 @@ export interface linePositionRefsProps {
   bottomLinePosition?: number;
 }
 
-function AnimatedMenuVertically(menuProps: MenuContentProps) {
+export function AnimatedMenuVertically(menuProps: MenuContentProps) {
   const [linePositionRefs, setLinePositionRefs] = useState<linePositionRefsProps>({} as linePositionRefsProps)
 
   const {

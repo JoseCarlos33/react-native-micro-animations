@@ -1,8 +1,13 @@
 {
   "name": "react-native-micro-animations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Micro Animation Components for React Native",
-  "main": "index.js",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
+  "source": "src/index.tsx",
+  "engines": {
+    "node": ">=16"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoseCarlos33/react-native-micro-animations.git"

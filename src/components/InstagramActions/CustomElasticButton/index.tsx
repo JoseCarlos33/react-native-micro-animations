@@ -1,5 +1,4 @@
 import React from 'react';
-import { MenuContentProps } from 'src/components/AnimatedMenus/AnimatedMenuVertically';
 import {
   ContainerPressable,
   IconBox,
@@ -16,7 +15,7 @@ export interface CustomElasticButtonProps {
   onPress?: any;
 }
 
-function CustomElasticButton(menuProps: CustomElasticButtonProps) {
+export function CustomElasticButton(menuProps: CustomElasticButtonProps) {
 
   const {
     initIconAnimatedStyle,

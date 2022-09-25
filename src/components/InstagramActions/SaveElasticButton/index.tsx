@@ -1,7 +1,7 @@
 import React from 'react';
-import BookmarkNormal from '~/assets/icons/bookmark-regular.svg';
-import BookmarkSolid from '~/assets/icons/bookmark-solid.svg';
-import CustomElasticButton from '~/components/InstagramActions/CustomElasticButton';
+import BookmarkNormal from '../../assets/icons/bookmark-regular.svg';
+import BookmarkSolid from '../../assets/icons/bookmark-solid.svg';
+import CustomElasticButton from '../CustomElasticButton';
 
 interface SaveElasticButtonProps{
   initialColor?: string;
@@ -11,7 +11,7 @@ interface SaveElasticButtonProps{
   onPress?: () => void;
 }
 
-function SaveElasticButton({height, width, initialColor, endColor, onPress}: SaveElasticButtonProps){
+export function SaveElasticButton({height, width, initialColor, endColor, onPress}: SaveElasticButtonProps){
   return (
     <CustomElasticButton
       initIcon={<BookmarkNormal width={width ?? 32} height={height ?? 32} fill={initialColor ?? "#000"}/>}
