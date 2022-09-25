@@ -1,6 +1,6 @@
 {
   "name": "react-native-micro-animations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Micro Animation Components for React Native",
   "main": "src/index.tsx",
   "module": "src/index.tsx",
