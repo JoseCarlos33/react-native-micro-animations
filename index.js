@@ -11,12 +11,13 @@ import SaveElasticButton from './src/components/InstagramActions/SaveElasticButt
 import LikeElasticButton from './src/components/InstagramActions/LikeElasticButton';
 import CustomElasticButton from './src/components/InstagramActions/CustomElasticButton';
 
-export {
+
+AppRegistry.registerComponent(appName, () => App);
+
+export default {
   AnimatedMenuVertically,
   AnimatedMenuHorizontally,
   SaveElasticButton,
   LikeElasticButton,
   CustomElasticButton
 };
-
-// AppRegistry.registerComponent(appName, () => App);

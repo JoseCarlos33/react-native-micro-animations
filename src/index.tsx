@@ -15,7 +15,7 @@ import FolderNormal from '~/assets/icons/folder-open-regular.svg';
 import FolderSolid from '~/assets/icons/folder-solid.svg';
 import CustomElasticButton from './components/InstagramActions/CustomElasticButton';
 
-const MicroAnimations: React.FC = () => {
+export const MicroAnimations: React.FC = () => {
   const [positionPagination, setPositionPagination] = useState(0);
 
   const { width, height } = Dimensions.get('window');
@@ -197,5 +197,3 @@ const MicroAnimations: React.FC = () => {
     </Container >
   );
 }
-
-export default MicroAnimations;
