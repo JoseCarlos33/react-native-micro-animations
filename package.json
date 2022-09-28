@@ -1,14 +1,26 @@
 {
   "name": "react-native-micro-animations",
-  "version": "1.0.22",
+  "version": "1.0.36",
   "description": "Micro Animation Components for React Native",
   "main": "src/index.tsx",
   "module": "src/index.tsx",
-  "source": "src/index.tsx",
   "files": [
-    "src/assets/icons",
     "assets/fonts",
-    "src/components"
+    "src",
+    ".buckconfig",
+    ".eslintrc.js",
+    ".gitignore",
+    ".nvmrc",
+    ".prettierrc.js",
+    ".ruby-version",
+    ".watchmanconfig",
+    "app.json",
+    "App.tsx",
+    "babel.config.js",
+    "Gemfile",
+    "metro.config.js",
+    "react-native.config.js",
+    "tsconfig.json"
   ],
   "engines": {
     "node": ">=16"
@@ -41,8 +53,6 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "react": "18.0.0",
-    "react-native": "0.69.4",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-svg": "^13.0.0",
     "styled-components": "^5.3.5"
@@ -66,7 +76,9 @@
     "metro-react-native-babel-preset": "^0.70.3",
     "react-native-svg-transformer": "^1.0.0",
     "react-test-renderer": "18.0.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "react-native": "^0.69.4",
+    "react": "^18.0.0"
   },
   "jest": {
     "preset": "react-native",

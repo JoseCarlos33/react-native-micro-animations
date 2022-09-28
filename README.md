@@ -21,6 +21,38 @@
   yarn add react-native-micro-animations
 ```
 
+## Configuration
+### As svg files are used in the micro animation library, it is necessary to install support libraries for these types of files, for that follow the steps below:
+
+1. Install support dependences: 
+```js
+  yarn add react-native-svg && yarn add react-native-svg-transformer
+```
+2. In file metro.config.js replace all code for the following code below:
+```js
+const {getDefaultConfig} = require('metro-config');
+
+module.exports = (async () => {
+  const {
+    resolver: {sourceExts, assetExts},
+  } = await getDefaultConfig();
+  return {
+    transformer: {
+      getTransformOptions: async () => ({
+        transform: {
+          experimentalImportSupport: false,
+          inlineRequires: true,
+        },
+      }),
+      babelTransformerPath: require.resolve('react-native-svg-transformer'),
+    },
+    resolver: {
+      assetExts: assetExts.filter(ext => ext !== 'svg'),
+      sourceExts: [...sourceExts, 'svg'],
+    },
+  };
+})();
+```
 ## `Menu` Component
 
 ### Usage

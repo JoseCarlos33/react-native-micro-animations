@@ -1,6 +1,6 @@
 import React from 'react';
-import HeartNormal from '../../assets/icons/heart-regular.svg';
-import HeartSolid from '../../assets/icons/heart-solid.svg';
+import HeartNormal from '../../../assets/icons/heart-regular.svg';
+import HeartSolid from '../../../assets/icons/heart-solid.svg';
 import CustomElasticButton from '../CustomElasticButton';
 
 interface LikeElasticButtonProps{

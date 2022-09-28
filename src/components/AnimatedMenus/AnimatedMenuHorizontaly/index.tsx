@@ -30,7 +30,6 @@ export function AnimatedMenuHorizontally(menuProps: MenuContentProps) {
       <LinesBox
         onLayout={(event: any) => {
           const width = event.nativeEvent.layout.width;
-          console.log(width);
           setLinesBoxWidth(width);
         }}
       >

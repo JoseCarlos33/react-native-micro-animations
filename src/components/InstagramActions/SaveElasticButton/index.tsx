@@ -1,6 +1,6 @@
 import React from 'react';
-import BookmarkNormal from '../../assets/icons/bookmark-regular.svg';
-import BookmarkSolid from '../../assets/icons/bookmark-solid.svg';
+import BookmarkNormal from '../../../assets/icons/bookmark-regular.svg';
+import BookmarkSolid from '../../../assets/icons/bookmark-solid.svg';
 import CustomElasticButton from '../CustomElasticButton';
 
 interface SaveElasticButtonProps{
