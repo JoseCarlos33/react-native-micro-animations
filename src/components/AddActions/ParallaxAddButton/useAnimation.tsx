@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing } from 'react-native';
 
-export default function useAnimationHorizontally(lineBoxWidth: number) {
+export default function useParallaxAddButtonAnimation(lineBoxWidth: number) {
   const [currentAnimation, setCurrentAnimation] = useState(false);
   const [isFirstAnimation, setIsFirstAnimation] = useState(false);
   const lineWidth = lineBoxWidth ? lineBoxWidth * 0.7 : 0;

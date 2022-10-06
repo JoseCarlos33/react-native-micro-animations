@@ -6,25 +6,26 @@ import {
   Line
 } from './styles';
 
-import useAnimationHorizontally from './useAnimation';
-export interface RotateAddButtonProps {
+import useParallaxAddButtonAnimation from './useAnimation';
+export interface ParallaxButtonProps {
   width?: number;
   height?: number;
   borderRadius?: number;
   backgroundColor?: string;
   activeOpacity?: number;
   lineColor?: string;
+  disableBoxShadow?: boolean;
   onPress?: () => void;
 }
 
-export function RotateAddButton(buttonProps: RotateAddButtonProps) {
+export function ParallaxAddButton(buttonProps: ParallaxButtonProps) {
   const [linesBoxWidth, setLinesBoxWidth] = useState(0)
 
   const {
     toogleAnimations,
     verticalLineAnimatedStyle,
     horizontalLineAnimatedStyle,
-  } = useAnimationHorizontally(linesBoxWidth);
+  } = useParallaxAddButtonAnimation(linesBoxWidth);
 
   return (
     <ContainerPressable
@@ -47,4 +48,4 @@ export function RotateAddButton(buttonProps: RotateAddButtonProps) {
   );
 }
 
-export default RotateAddButton;
+export default ParallaxAddButton;

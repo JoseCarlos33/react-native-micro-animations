@@ -14,7 +14,7 @@ import EyeSolid from '~/assets/icons/eye-slash-solid.svg';
 import FolderNormal from '~/assets/icons/folder-open-regular.svg';
 import FolderSolid from '~/assets/icons/folder-solid.svg';
 import CustomElasticButton from './components/InstagramActions/CustomElasticButton';
-import RotateAddButton from './components/AddActions/RotateAddButton';
+import ParallaxAddButton from './components/AddActions/ParallaxAddButton';
 
 export const MicroAnimations: React.FC = () => {
   const [positionPagination, setPositionPagination] = useState(0);
@@ -192,7 +192,7 @@ export const MicroAnimations: React.FC = () => {
                         Add Action Button
                       </Text>
                       <AnimationCardBox>
-                        <RotateAddButton/>
+                        <ParallaxAddButton/>
                       </AnimationCardBox>
                     </SectionComponentBox>
                   </AnimatedComponentBox>
