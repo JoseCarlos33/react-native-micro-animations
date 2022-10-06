@@ -15,6 +15,7 @@ export interface MenuContentProps {
   backgroundColor?: string;
   activeOpacity?: number;
   lineColor?: string;
+  disableBoxShadow?: boolean;
   onPress?: () => void;
 }
 

@@ -10,7 +10,7 @@ export const MenuContent = styled.TouchableOpacity((props: MenuContentProps) => 
   borderRadius: props.borderRadius ? props.borderRadius : '9px',
   backgroundColor: props.backgroundColor ? props.backgroundColor : "#f5f5f5",
   activeOpacity: props.activeOpacity ? props.activeOpacity : 0.2,
-  shadowColor: '#52006A',
+  shadowColor: '#878787',
   shadowOffset: { width: 5, height: 2 },
   elevation: "2",
   shadowOpacity: "0.25",
