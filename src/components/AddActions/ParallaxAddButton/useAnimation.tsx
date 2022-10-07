@@ -45,7 +45,7 @@ export default function useParallaxAddButtonAnimation(lineBoxWidth: number) {
           verticalLineRotateRef,
           {
             toValue: 1,
-            duration: 500,
+            duration: 300,
             easing: Easing.ease,
             useNativeDriver: false
           }
@@ -54,7 +54,7 @@ export default function useParallaxAddButtonAnimation(lineBoxWidth: number) {
           horizontalLineRotateRef,
           {
             toValue: 1,
-            duration: 500,
+            duration: 300,
             easing: Easing.ease,
             useNativeDriver: false
           }

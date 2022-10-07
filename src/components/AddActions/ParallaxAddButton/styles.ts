@@ -6,18 +6,18 @@ import { ParallaxButtonProps } from './index';
 export const ContainerPressable = styled.TouchableOpacity((props: ParallaxButtonProps) => ({
   width: props.width ? `${wp(props.width)}px` : `${wp(16)}px`,
   height: props.height ? `${wp(props.height)}px` : `${wp(16)}px`,
-  backgroundColor: props.backgroundColor ? `${props.backgroundColor}` : "#FAFAFA",
+  backgroundColor: props.backgroundColor ? `${props.backgroundColor}` : "#75bf75",
   activeOpacity: props.activeOpacity ? props.activeOpacity : 0.2,
   justifyContent: "center",
   alignItems: "center",
-  padding: 5,
+  padding: 7,
   borderRadius: props.borderRadius ? props.borderRadius : 30,
   //Shadow
-  shadowColor: props.disableBoxShadow ? "transparent" : '#878787',
-  shadowOffset: props.disableBoxShadow ? {} : { width: 2, height: 5},
+  shadowColor: props.disableBoxShadow ? "transparent" : '#000000',
+  shadowOffset: props.disableBoxShadow ? {} : { width: 5, height: 2},
   elevation: props.disableBoxShadow ? "0" : "2",
-  shadowOpacity: props.disableBoxShadow ? "0" : "0.25",
-  shadowRadius: props.disableBoxShadow ? "0" : "8px",
+  shadowOpacity: props.disableBoxShadow ? "0" : "0.3",
+  shadowRadius: props.disableBoxShadow ? "0" : "10px",
 }));
 
 export const LinesBox = styled.View`
@@ -30,7 +30,7 @@ export const LinesBox = styled.View`
 
 export const Line = styled(Animated.View)`
   width: 100%;
-  height: 17%;
-  background-color: ${(props: any) => props?.lineColor ? props?.lineColor : "#343947"};
-  border-radius: 20px;
+  height: 13%;
+  background-color: ${(props: any) => props?.lineColor ? props?.lineColor : "#ededed"};
+  border-radius: 2px;
 `;
