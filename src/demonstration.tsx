@@ -14,6 +14,9 @@ import EyeSolid from '~/assets/icons/eye-slash-solid.svg';
 import FolderNormal from '~/assets/icons/folder-open-regular.svg';
 import FolderSolid from '~/assets/icons/folder-solid.svg';
 import CustomElasticButton from './components/InstagramActions/CustomElasticButton';
+import ParallaxAddButton from './components/AddActions/ParallaxAddButton';
+import RotateAddButton from './components/AddActions/RotateAddButton';
+import SubtractAddButton from './components/AddActions/SubtractAddButton';
 
 export const MicroAnimations: React.FC = () => {
   const [positionPagination, setPositionPagination] = useState(0);
@@ -54,7 +57,7 @@ export const MicroAnimations: React.FC = () => {
       <View style={{ flexDirection: "row" }}>
         <Animated.FlatList
           ref={animationPaginatedRef}
-          data={["Animated Menu 1", "Animated Menu 2", "Instagram Actions"]}
+          data={["Animated Menu 1", "Animated Menu 2", "Instagram Actions", "Add Actions"]}
           keyExtractor={item => item}
           renderItem={({ item, index }) =>
             <ToggleButton key={item} style={[index == positionPagination && activityColor]} onPress={() => {
@@ -72,7 +75,7 @@ export const MicroAnimations: React.FC = () => {
       </View>
       <Animated.FlatList
         ref={animationPaginatedRef}
-        data={[1234, 2345, 3456]}
+        data={[1234, 2345, 3456, 4567]}
         keyExtractor={item => item.toString()}
         renderItem={({ item, index }) => {
           return (
@@ -143,7 +146,7 @@ export const MicroAnimations: React.FC = () => {
                         Save Action Button
                       </Text>
                       <AnimationCardBox>
-                        <SaveElasticButton onPress={() => console.log("teste")}/>
+                        <SaveElasticButton onPress={() => console.log("teste")} />
                         <SaveElasticButton height={45} width={45} />
                         <SaveElasticButton height={55} width={55} />
                         <SaveElasticButton height={65} width={65} />
@@ -167,17 +170,53 @@ export const MicroAnimations: React.FC = () => {
                       <AnimationCardBox>
                         <CustomElasticButton
                           initIcon={<CommentsNormal height={45} width={45} fill={"#000"} />}
-                          endIcon={<CommentsSolid height={45} width={45} fill={"#000"}/>}
+                          endIcon={<CommentsSolid height={45} width={45} fill={"#000"} />}
                         />
                         <CustomElasticButton
                           initIcon={<EyeNormal height={45} width={45} fill={"#000"} />}
-                          endIcon={<EyeSolid height={45} width={45} fill={"#000"}/>}
+                          endIcon={<EyeSolid height={45} width={45} fill={"#000"} />}
                         />
                         <CustomElasticButton
                           initIcon={<FolderSolid height={45} width={45} fill={"#000"} />}
-                          endIcon={<FolderNormal height={45} width={45} fill={"#000"}/>}
+                          endIcon={<FolderNormal height={45} width={45} fill={"#000"} />}
                           onPress={onPressEvent}
                         />
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                  </AnimatedComponentBox>
+                )
+              }
+              {
+                index === 3 && (
+                  <AnimatedComponentBox style={{justifyContent: "flex-start"}}>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Parallax Add Button
+                      </Text>
+                      <AnimationCardBox>
+                        <ParallaxAddButton height={10} width={10}/>
+                        <ParallaxAddButton height={15} width={15}/>
+                        <ParallaxAddButton height={20} width={20} borderRadius={50}/>
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Rotate Add Button
+                      </Text>
+                      <AnimationCardBox>
+                        <RotateAddButton height={10} width={10}/>
+                        <RotateAddButton height={15} width={15}/>
+                        <RotateAddButton height={20} width={20} borderRadius={50}/>
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Subtract Add Button
+                      </Text>
+                      <AnimationCardBox>
+                        <SubtractAddButton height={10} width={10}/>
+                        <SubtractAddButton height={15} width={15}/>
+                        <SubtractAddButton height={20} width={20} borderRadius={50}/>
                       </AnimationCardBox>
                     </SectionComponentBox>
                   </AnimatedComponentBox>
