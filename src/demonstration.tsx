@@ -191,12 +191,32 @@ export const MicroAnimations: React.FC = () => {
                   <AnimatedComponentBox style={{justifyContent: "flex-start"}}>
                     <SectionComponentBox>
                       <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
-                        Add Action Button
+                        Parallax Add Button
                       </Text>
                       <AnimationCardBox>
-                        <ParallaxAddButton/>
-                        <RotateAddButton/>
-                        <SubtractAddButton/>
+                        <ParallaxAddButton height={10} width={10}/>
+                        <ParallaxAddButton height={15} width={15}/>
+                        <ParallaxAddButton height={20} width={20} borderRadius={50}/>
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Rotate Add Button
+                      </Text>
+                      <AnimationCardBox>
+                        <RotateAddButton height={10} width={10}/>
+                        <RotateAddButton height={15} width={15}/>
+                        <RotateAddButton height={20} width={20} borderRadius={50}/>
+                      </AnimationCardBox>
+                    </SectionComponentBox>
+                    <SectionComponentBox>
+                      <Text style={{ fontFamily: "Rubik-Regular", fontSize: 22 }}>
+                        Subtract Add Button
+                      </Text>
+                      <AnimationCardBox>
+                        <SubtractAddButton height={10} width={10}/>
+                        <SubtractAddButton height={15} width={15}/>
+                        <SubtractAddButton height={20} width={20} borderRadius={50}/>
                       </AnimationCardBox>
                     </SectionComponentBox>
                   </AnimatedComponentBox>

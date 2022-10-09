@@ -7,6 +7,8 @@
   height="425">
   <img src=".github/demonstrationElasticButtonIcons.gif" 
   height="425">
+  <img src=".github/demonstrationAddButtons.gif" 
+  height="425">
 </p>
 
 
@@ -104,7 +106,7 @@ module.exports = (async () => {
 
 <br></br>
 
-## `Elastic Button ` Components
+## `Elastic Button` Components
 
 ### Usage
 
@@ -150,6 +152,73 @@ module.exports = (async () => {
   />
 ```
 
+## `Add Button` Components
+
+### Usage
+
+#### Parallax Add Button
+```js
+  import { ParallaxAddButton } from 'react-native-micro-animations';
+  ...
+
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+  ... 
+
+  <ParallaxAddButton 
+    height={15} 
+    width={15}
+    onPress={yourOnPressFunction}
+  />
+```
+
+#### Rotate Add Button
+```js
+  import { RotateAddButton } from 'react-native-micro-animations';
+  ...
+
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+  ... 
+  
+  <RotateAddButton 
+    height={15} 
+    width={15}
+    onPress={yourOnPressFunction}
+  />
+```
+
+#### Subtract Add Button
+```js
+  import { SubtractAddButton } from 'react-native-micro-animations';
+  ...
+
+  const yourOnPressFunction = () => {
+    console.log("Do something here...");
+  }
+  ... 
+  
+  <SubtractAddButton 
+    height={15} 
+    width={15}
+    onPress={yourOnPressFunction}
+  />
+```
+
+### Properties
+
+| Prop                 | Description                                  | Type           |
+| -------------------- | -------------------------------------------- | -------------- |
+| **`height`**         | Heigth of the button                         | _Number_       |
+| **`width`**          | Width of the button                          | _Number_       |
+| **`borderRadius`**   | BorderRadius of the button                   | _Number_       |
+| **`backgroundColor`**| BackgroundColor of the button                | _String_       |
+| **`lineColor`**      | Color of the lines inside the button         | _String_       |
+| **`onPress`**        | Action when press the button                 | _() => Void_   |
+
+
 ### Stack
 
 - [x] React Native
@@ -160,3 +229,7 @@ module.exports = (async () => {
 ## Autor
 
 **José Carlos Noronha**
+
+## LICENSE
+## License
+[MIT](LICENSE) © 2022 José Carlos Noronha
