@@ -226,9 +226,5 @@ module.exports = (async () => {
 - [x] Typescript
 - [x] Styled Components
 
-## Autor
-
-**José Carlos Noronha**
-
 ## LICENSE
 [MIT](LICENSE) © 2022 José Carlos Noronha
