@@ -231,5 +231,4 @@ module.exports = (async () => {
 **José Carlos Noronha**
 
 ## LICENSE
-## License
 [MIT](LICENSE) © 2022 José Carlos Noronha
