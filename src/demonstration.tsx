@@ -83,6 +83,7 @@ export const MicroAnimations: React.FC = () => {
               {
                 index === 0 && (
                   <AnimatedComponentBox>
+                    <AnimatedMenuVertically/>
                     <AnimatedMenuVertically
                       height={20}
                       width={20}
