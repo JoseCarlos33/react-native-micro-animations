@@ -46,7 +46,7 @@ export default function useSubtractAddButtonAnimation(lineBoxWidth: number) {
           {
             toValue: 1,
             duration: 300,
-            easing: Easing.ease,
+            easing: Easing.linear,
             useNativeDriver: false
           }
         ),
@@ -55,7 +55,7 @@ export default function useSubtractAddButtonAnimation(lineBoxWidth: number) {
           {
             toValue: 1,
             duration: 400,
-            easing: Easing.ease,
+            easing: Easing.linear,
             useNativeDriver: false
           }
         ),
