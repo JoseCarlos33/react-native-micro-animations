@@ -11,13 +11,13 @@ export default function useRotateAddButtonAnimation(lineBoxWidth: number) {
   const spinVerticalLine = verticalLineRotateRef.interpolate({
     inputRange: [0, 1],
     outputRange: ['90deg', '-45deg'],
-    easing: Easing.cubic
+    easing: Easing.bezier(.47,.62,.02,1.17)
   })
 
   const spinHorizontalLine = horizontalLineRotateRef.interpolate({
     inputRange: [0, 1],
     outputRange: ['0deg', '-135deg'],
-    easing: Easing.cubic
+    easing: Easing.bezier(.47,.62,.02,1.17)
   })
 
   let verticalLineAnimatedStyle = {
@@ -45,7 +45,7 @@ export default function useRotateAddButtonAnimation(lineBoxWidth: number) {
           verticalLineRotateRef,
           {
             toValue: 1,
-            duration: 400,
+            duration: 600,
             easing: Easing.ease,
             useNativeDriver: false
           }
@@ -54,7 +54,7 @@ export default function useRotateAddButtonAnimation(lineBoxWidth: number) {
           horizontalLineRotateRef,
           {
             toValue: 1,
-            duration: 400,
+            duration: 600,
             easing: Easing.ease,
             useNativeDriver: false
           }
@@ -70,7 +70,7 @@ export default function useRotateAddButtonAnimation(lineBoxWidth: number) {
         verticalLineRotateRef,
         {
           toValue: 0,
-          duration: 500,
+          duration: 600,
           easing: Easing.ease,
           useNativeDriver: false
         }
@@ -79,7 +79,7 @@ export default function useRotateAddButtonAnimation(lineBoxWidth: number) {
         horizontalLineRotateRef,
         {
           toValue: 0,
-          duration: 500,
+          duration: 600,
           easing: Easing.ease,
           useNativeDriver: false
         }
